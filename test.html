@@ -9,29 +9,32 @@
                 visibility: hidden;
                 position: absolute;
             }
+            .test {
+                color: red;
+            }
         </style>
         <script>
-            // var all = document.getElementsByTagName("*");
-            // document.querySelectorAll("[lang='tr']");
             window.onload = function() {
                 var all = document.querySelectorAll("[lang]");
                 for (let i = 0, max = all.length; i < max; i++) {
-                    console.log("element: " + i + "\n");
-                    if (all[i].getAttribute == "tr") {
+                    if (all[i].getAttribute("lang") == "tr") {
                         all[i].classList.add("elvisible");
+                        all[i].classList.remove("elinvisible");
                     } else {
                         all[i].classList.add("elinvisible");
+                        all[i].classList.remove("elvisible");
                     }
                 }
-            // var element = document.documentElement.lang;
             }
         </script>
     </head>
     <body>
         <div>
-            <p lang="tr">türkçe</p>
+            <p lang="tr" class="test">türkçe</p>
             <p lang="fr">fransızca</p>
-            <p lang="en">ingilizce</p>
+            <p lang="en" class="test">ingilizce</p>
+            <h1 lang="tr">türkçe</h1>
+            <h1 lang="en">ingilizce</h1>
         </div>
     </body>
 </html>
