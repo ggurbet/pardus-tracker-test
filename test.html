@@ -15,9 +15,10 @@
         </style>
         <script>
             window.onload = function() {
+                var userLang = navigator.language || navigator.userLanguage;
                 var all = document.querySelectorAll("[lang]");
                 for (let i = 0, max = all.length; i < max; i++) {
-                    if (all[i].getAttribute("lang") == "tr") {
+                    if (all[i].getAttribute("lang") == userLang[0] + userLang[1]) {
                         all[i].classList.add("elvisible");
                         all[i].classList.remove("elinvisible");
                     } else {
