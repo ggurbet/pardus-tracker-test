@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <style>
+            .elvisible {
+                visibility: visible;
+                position: relative;
+            }
+            .elinvisible {
+                visibility: hidden;
+                position: absolute;
+            }
+        </style>
+        <script>
+            // var all = document.getElementsByTagName("*");
+            // document.querySelectorAll("[lang='tr']");
+            window.onload = function() {
+                var all = document.querySelectorAll("[lang]");
+                for (let i = 0, max = all.length; i < max; i++) {
+                    console.log("element: " + i + "\n");
+                    if (all[i].getAttribute == "tr") {
+                        all[i].classList.add("elvisible");
+                    } else {
+                        all[i].classList.add("elinvisible");
+                    }
+                }
+            // var element = document.documentElement.lang;
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <p lang="tr">türkçe</p>
+            <p lang="fr">fransızca</p>
+            <p lang="en">ingilizce</p>
+        </div>
+    </body>
+</html>
